@@ -28,3 +28,12 @@ class DQNet(nn.Module):
         actions = self.fc3(x)
 
         return actions
+
+    def save_checkpoint(self):
+        print('Saving Checkpoint...')
+        T.save(self.state_dict(), './checkpoints/DQNet')
+    
+    def load_checkpoint(self):
+        print('Loading Checkpoint...')
+        self.load_state_dict(T.load('./checkpoints/DQNet'))
+    

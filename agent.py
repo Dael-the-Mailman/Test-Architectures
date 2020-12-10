@@ -77,3 +77,9 @@ class Agent:
 
         self.epsilon = self.epsilon - self.eps_dec if self.epsilon > self.eps_min \
                         else self.eps_min
+    
+    def save_checkpoint(self):
+        self.Q_eval.save_checkpoint()
+    
+    def load_checkpoint(self):
+        self.Q_eval.load_checkpoint()
